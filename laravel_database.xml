@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.2
+- https://www.phpmyadmin.net
+-
+- Хост: 127.0.0.1
+- Время создания: Сен 03 2018 г., 00:06
+- Версия сервера: 10.1.34-MariaDB
+- Версия PHP: 7.2.8
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="laravel_database" collation="utf8mb4_unicode_ci" charset="utf8mb4">
+            <pma:table name="admins">
+                CREATE TABLE `admins` (
+                  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                  `admin_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `job_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `admins_email_unique` (`email`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="migrations">
+                CREATE TABLE `migrations` (
+                  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `batch` int(11) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="password_resets">
+                CREATE TABLE `password_resets` (
+                  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  KEY `password_resets_email_index` (`email`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="tasks">
+                CREATE TABLE `tasks` (
+                  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `created_by` int(11) NOT NULL,
+                  `modified_by` int(11) DEFAULT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `tasks_slug_unique` (`slug`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `users_email_unique` (`email`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - База данных: 'laravel_database'
+    -->
+    <database name="laravel_database">
+        <!-- Таблица admins -->
+        <table name="admins">
+            <column name="id">1</column>
+            <column name="admin_name">mrMaster</column>
+            <column name="email">baranov.a@me.com</column>
+            <column name="job_title">Master</column>
+            <column name="password">$2y$10$w6kebBr4UVKzXGdjENyWI.TqNZ/oF1DbSDTLfYBSLnbxScobrIhJq</column>
+            <column name="remember_token">NULL</column>
+            <column name="created_at">2018-08-30 09:33:17</column>
+            <column name="updated_at">2018-08-30 09:33:17</column>
+        </table>
+        <!-- Таблица migrations -->
+        <table name="migrations">
+            <column name="id">1</column>
+            <column name="migration">2014_10_12_000000_create_users_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">2</column>
+            <column name="migration">2014_10_12_100000_create_password_resets_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">3</column>
+            <column name="migration">2018_08_25_163259_create_admins_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">4</column>
+            <column name="migration">2018_08_27_055651_create_tasks_table</column>
+            <column name="batch">1</column>
+        </table>
+        <!-- Таблица password_resets -->
+        <!-- Таблица tasks -->
+        <table name="tasks">
+            <column name="id">2</column>
+            <column name="title">Задача-2</column>
+            <column name="slug">zadacha-2-3008180943</column>
+            <column name="description">Описание задачи-2</column>
+            <column name="created_by">1</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-08-30 09:43:57</column>
+            <column name="updated_at">2018-08-30 09:43:57</column>
+        </table>
+        <table name="tasks">
+            <column name="id">3</column>
+            <column name="title">Задача-3</column>
+            <column name="slug">zadacha-3-3008180950</column>
+            <column name="description">Описание задачи-3</column>
+            <column name="created_by">1</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-08-30 09:50:07</column>
+            <column name="updated_at">2018-08-30 09:50:07</column>
+        </table>
+        <table name="tasks">
+            <column name="id">4</column>
+            <column name="title">Задача-4</column>
+            <column name="slug">zadacha-4-3008181000</column>
+            <column name="description">Описание задачи-4</column>
+            <column name="created_by">1</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-08-30 10:00:21</column>
+            <column name="updated_at">2018-08-30 10:00:21</column>
+        </table>
+        <table name="tasks">
+            <column name="id">6</column>
+            <column name="title">Задача-6</column>
+            <column name="slug">zadacha-6-3108181436</column>
+            <column name="description">Описание задачи -6</column>
+            <column name="created_by">1</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-08-31 14:36:04</column>
+            <column name="updated_at">2018-08-31 14:36:04</column>
+        </table>
+        <table name="tasks">
+            <column name="id">11</column>
+            <column name="title">Задача-7</column>
+            <column name="slug">zadacha-7-3108181552</column>
+            <column name="description">Описание задачи-77</column>
+            <column name="created_by">1</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-08-31 15:52:41</column>
+            <column name="updated_at">2018-08-31 15:52:52</column>
+        </table>
+        <table name="tasks">
+            <column name="id">12</column>
+            <column name="title">112</column>
+            <column name="slug">112-3108181605</column>
+            <column name="description">112</column>
+            <column name="created_by">1</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-08-31 16:05:23</column>
+            <column name="updated_at">2018-08-31 16:05:23</column>
+        </table>
+        <table name="tasks">
+            <column name="id">14</column>
+            <column name="title">Задача клиента 1</column>
+            <column name="slug">zadacha-klienta-1-0109181911</column>
+            <column name="description">Описание задачи клиента -1</column>
+            <column name="created_by">3</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-09-01 19:11:15</column>
+            <column name="updated_at">2018-09-01 19:11:15</column>
+        </table>
+        <table name="tasks">
+            <column name="id">15</column>
+            <column name="title">Задача-8</column>
+            <column name="slug">zadacha-8-0209181644</column>
+            <column name="description">Описание</column>
+            <column name="created_by">1</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-09-02 16:44:41</column>
+            <column name="updated_at">2018-09-02 16:44:41</column>
+        </table>
+        <table name="tasks">
+            <column name="id">16</column>
+            <column name="title">Задача-9</column>
+            <column name="slug">zadacha-9-0209181645</column>
+            <column name="description">Описание</column>
+            <column name="created_by">1</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-09-02 16:45:05</column>
+            <column name="updated_at">2018-09-02 16:45:05</column>
+        </table>
+        <table name="tasks">
+            <column name="id">17</column>
+            <column name="title">Задача-11</column>
+            <column name="slug">zadacha-11-0209181645</column>
+            <column name="description">Описание</column>
+            <column name="created_by">3</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-09-02 16:45:50</column>
+            <column name="updated_at">2018-09-02 16:45:50</column>
+        </table>
+        <table name="tasks">
+            <column name="id">18</column>
+            <column name="title">Задача-12</column>
+            <column name="slug">zadacha-12-0209181646</column>
+            <column name="description">Описание</column>
+            <column name="created_by">3</column>
+            <column name="modified_by">NULL</column>
+            <column name="created_at">2018-09-02 16:46:16</column>
+            <column name="updated_at">2018-09-02 16:46:16</column>
+        </table>
+        <!-- Таблица users -->
+        <table name="users">
+            <column name="id">3</column>
+            <column name="name">Andrey</column>
+            <column name="email">b0030011@yandex.ru</column>
+            <column name="password">$2y$10$CFBVvVTDtwwWxcRxiiBxdesddOxHDbt/rWOaJVJp53WU6RF.hcF7i</column>
+            <column name="remember_token">zgt8fq5FfUrHUvWoDuovqsTlddE6R9PrH6IPiL98vNF97a4wjfaCPzRKVe3V</column>
+            <column name="created_at">2018-08-30 09:35:26</column>
+            <column name="updated_at">2018-08-30 09:35:26</column>
+        </table>
+    </database>
+</pma_xml_export>
